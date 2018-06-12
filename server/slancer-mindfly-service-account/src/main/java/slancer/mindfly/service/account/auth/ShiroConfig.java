@@ -49,20 +49,13 @@ public class ShiroConfig {
 
         // filter chain
         Map<String, String> chainMap = new LinkedHashMap<>();
-        chainMap.put("/unauth", "anon");
-
-        // swagger
-        chainMap.put("/v2/api-docs", "anon");
-
-        // druid
-        chainMap.put("/druid/**", "anon");
 
         // user filters
         chainMap.put("/account/**/login", "anon");
         chainMap.put("/account/**/reg", "anon");
-        chainMap.put("/**", UserTokenFilter.class.getName());
+        chainMap.put("/user/**", UserTokenFilter.class.getName());
 
-        // chainMap.put("/**", "anon");
+         chainMap.put("/**", "anon");
 
         factoryBean.setFilterChainDefinitionMap(chainMap);
         // factoryBean.setUnauthorizedUrl("/unauth");
