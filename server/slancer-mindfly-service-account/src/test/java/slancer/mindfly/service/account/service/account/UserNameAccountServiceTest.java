@@ -5,13 +5,9 @@ import slancer.mindfly.service.account.controller.account.dto.UserNameAccountReg
 import slancer.mindfly.service.account.dao.UserNameAccountDAO;
 import slancer.mindfly.service.account.entity.account.UserNameAccountEntity;
 import slancer.mindfly.service.account.enums.GenderEnum;
-import slancer.mindfly.service.account.service.UserService;
+import slancer.mindfly.service.account.service.account.username.UserNameAccountService;
 import slancer.mindfly.test.AbS2u2mSpringTest;
-import slancer.mindfly.service.account.controller.account.dto.UserNameAccountRegDTO;
-import slancer.mindfly.service.account.dao.UserNameAccountDAO;
 import slancer.mindfly.service.account.entity.UserEntity;
-import slancer.mindfly.service.account.entity.account.UserNameAccountEntity;
-import slancer.mindfly.service.account.enums.GenderEnum;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;

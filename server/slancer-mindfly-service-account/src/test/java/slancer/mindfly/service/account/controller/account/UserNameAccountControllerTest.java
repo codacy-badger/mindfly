@@ -6,15 +6,9 @@ import slancer.mindfly.service.account.controller.account.dto.UserNameAccountLog
 import slancer.mindfly.service.account.controller.account.dto.UserNameAccountRegDTO;
 import slancer.mindfly.service.account.entity.account.UserNameAccountEntity;
 import slancer.mindfly.service.account.enums.GenderEnum;
-import slancer.mindfly.service.account.service.account.UserNameAccountService;
+import slancer.mindfly.service.account.service.account.username.UserNameAccountService;
 import slancer.mindfly.test.AbS2u2mControllerTest;
-import slancer.mindfly.service.account.controller.account.dto.LoginInfoDTO;
-import slancer.mindfly.service.account.controller.account.dto.UserNameAccountLoginDTO;
-import slancer.mindfly.service.account.controller.account.dto.UserNameAccountRegDTO;
 import slancer.mindfly.service.account.entity.UserEntity;
-import slancer.mindfly.service.account.entity.account.UserNameAccountEntity;
-import slancer.mindfly.service.account.enums.GenderEnum;
-import slancer.mindfly.service.account.service.account.UserNameAccountService;
 import org.junit.Test;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;

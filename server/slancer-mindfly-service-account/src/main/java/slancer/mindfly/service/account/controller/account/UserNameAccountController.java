@@ -9,11 +9,7 @@ import slancer.mindfly.service.account.controller.account.dto.LoginInfoDTO;
 import slancer.mindfly.service.account.controller.account.dto.UserNameAccountLoginDTO;
 import slancer.mindfly.service.account.controller.account.dto.UserNameAccountRegDTO;
 import slancer.mindfly.service.account.entity.UserEntity;
-import slancer.mindfly.service.account.service.account.UserNameAccountService;
-import slancer.mindfly.service.account.controller.account.dto.LoginInfoDTO;
-import slancer.mindfly.service.account.controller.account.dto.UserNameAccountLoginDTO;
-import slancer.mindfly.service.account.controller.account.dto.UserNameAccountRegDTO;
-import slancer.mindfly.service.account.service.account.UserNameAccountService;
+import slancer.mindfly.service.account.service.account.username.UserNameAccountService;
 
 /**
  * class UserNameAccountController

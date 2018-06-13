@@ -16,7 +16,7 @@ import java.util.Date;
 @Getter
 @Setter
 @Accessors(chain = true)
-public class UserNameAccountEntity {
+public class UserNameAccountEntity{
     private String userName;
     private String password;
     private String userId;
