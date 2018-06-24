@@ -8,11 +8,11 @@ import slancer.mindfly.service.account.entity.UserEntity;
  * @author xiayy860612
  * @date 2018/6/13
  */
-public interface IAccountService<AT> {
+public interface IAccountService<LT, RT, AT> {
 
-    UserEntity reg(AT info, UserEntity userInfo);
+    UserEntity reg(RT info);
 
-    UserEntity login(AT info);
+    UserEntity login(LT info);
 
-    void bind(AT info, String userId);
+    void bind(AT account, UserEntity user);
 }
