@@ -16,7 +16,7 @@
         create_time, update_time, delete_flag
     </sql>
 
-    <insert id="insert" parameterType="UserEntity">
+    <insert id="create" parameterType="UserEntity">
         insert into user_info (
         <include refid="all_fields"/>
         ) values (
@@ -30,5 +30,22 @@
         from user_info
         where id=#{id}
     </select>
+
+    <update id="update">
+        update user_info
+        <set>
+            <if test="entity.nickName != null and entity.nickName != ''">
+                nick_name=#{entity.nickName},
+            </if>
+            <if test="entity.gender != null">
+                gender=#{entity.gender},
+            </if>
+            <if test="entity.birthday != null">
+                birthday=#{entity.birthday},
+            </if>
+            id=#{uid}
+        </set>
+        where id=#{uid}
+    </update>
 
 </mapper>

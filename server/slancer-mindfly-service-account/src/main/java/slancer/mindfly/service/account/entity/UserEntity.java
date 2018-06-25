@@ -27,4 +27,5 @@ public class UserEntity {
     private Date createTime = Date.from(Instant.now());
     private Date updateTime;
     private Boolean deleteFlag = false;
+
 }

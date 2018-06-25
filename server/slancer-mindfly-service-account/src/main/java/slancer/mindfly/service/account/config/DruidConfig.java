@@ -63,6 +63,11 @@ public class DruidConfig {
     @Value("{spring.datasource.connectionProperties}")
     private String connectionProperties;
 
+    @Value("${mindfly.druid.admin.user}")
+    private String adminUser;
+    @Value("${mindfly.druid.admin.pwd}")
+    private String adminPassword;
+
     @Bean
     @Primary
     public DataSource druidDataSource() {
@@ -107,8 +112,8 @@ public class DruidConfig {
 //        servletRegistrationBean.addInitParameter("deny","192.168.1.100");
 
         //控制台管理用户
-        servletRegistrationBean.addInitParameter("loginUsername", "root");
-        servletRegistrationBean.addInitParameter("loginPassword", "root");
+        servletRegistrationBean.addInitParameter("loginUsername", adminUser);
+        servletRegistrationBean.addInitParameter("loginPassword", adminPassword);
         //是否能够重置数据
         servletRegistrationBean.addInitParameter("resetEnable", "false");
         return servletRegistrationBean;

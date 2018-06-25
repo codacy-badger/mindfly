@@ -1,5 +1,7 @@
 package slancer.mindfly.service.account.service;
 
+import org.springframework.test.annotation.Rollback;
+import org.springframework.transaction.annotation.Transactional;
 import slancer.mindfly.service.account.dao.UserDAO;
 import slancer.mindfly.test.AbS2u2mSpringTest;
 import slancer.mindfly.service.account.dao.UserDAO;
@@ -18,16 +20,15 @@ public class UserServiceTest extends AbS2u2mSpringTest {
     @Autowired
     private UserService userService;
 
-    @MockBean
+    @Autowired
     private UserDAO userDAO;
 
+    private String nickName = "test";
+    private GenderEnum gender = GenderEnum.Female;
+
     @Test
+    @Transactional
     public void create_success() {
-        String nickName = "test";
-        GenderEnum gender = GenderEnum.Female;
-
-        doReturn(1).when(userDAO).insert(any(UserEntity.class));
-
         UserEntity input = new UserEntity()
                 .setNickName(nickName)
                 .setGender(gender);
@@ -36,8 +37,29 @@ public class UserServiceTest extends AbS2u2mSpringTest {
 
         assertNotNull(entity.getId());
         assertNotEquals("", entity.getId());
-
         assertNotNull(entity.getCreateTime());
         assertFalse(entity.getDeleteFlag());
+
+        UserEntity exp = userDAO.getById(entity.getId());
+        assertNotNull(exp);
+    }
+
+    @Test
+    @Transactional
+    public void update_success() {
+        UserEntity input = new UserEntity()
+                .setNickName(nickName)
+                .setGender(gender);
+
+        UserEntity exp = userService.create(input);
+        String updateNickName = "test_update";
+
+        UserEntity update = new UserEntity()
+                .setNickName(updateNickName);
+
+        userService.update(exp.getId(), update);
+
+        UserEntity rst = userDAO.getById(exp.getId());
+        assertTrue(rst.getNickName().equals(updateNickName));
     }
 }

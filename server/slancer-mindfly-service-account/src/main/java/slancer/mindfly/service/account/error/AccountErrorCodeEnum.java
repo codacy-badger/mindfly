@@ -15,9 +15,9 @@ public enum AccountErrorCodeEnum implements IErrorCodeEnum {
     UnAuth(50),
     NotSetUserEntityDuringAuth(51),
 
-    UserNameOrPasswordFormatInvalid(101),
-    UserNameAccountExisted(102),
-    UserNameAccountNotExisted(103),;
+    // user
+    UserNotExisted(300)
+    ;
 
     private int code;
 
