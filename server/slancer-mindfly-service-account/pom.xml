@@ -137,7 +137,7 @@
             <plugin>
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-maven-plugin</artifactId>
-                <version>5.0.7</version>
+                <version>4.2.0</version>
                 <!--below config only used in dev env-->
                 <configuration>
                     <configFile>deploy/flyway/local.conf</configFile>
