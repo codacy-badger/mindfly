@@ -25,13 +25,15 @@ public class UserServiceTest extends AbS2u2mSpringTest {
 
     private String nickName = "test";
     private GenderEnum gender = GenderEnum.Female;
+    private String password = "123456";
 
     @Test
     @Transactional
     public void create_success() {
         UserEntity input = new UserEntity()
                 .setNickName(nickName)
-                .setGender(gender);
+                .setGender(gender)
+                .setPassword(password);
 
         UserEntity entity = userService.create(input);
 
@@ -49,7 +51,8 @@ public class UserServiceTest extends AbS2u2mSpringTest {
     public void update_success() {
         UserEntity input = new UserEntity()
                 .setNickName(nickName)
-                .setGender(gender);
+                .setGender(gender)
+                .setPassword(password);
 
         UserEntity exp = userService.create(input);
         String updateNickName = "test_update";

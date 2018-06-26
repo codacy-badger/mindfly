@@ -1,6 +1,7 @@
 
 CREATE TABLE IF NOT EXISTS `user_info` (
   `id` BIGINT(20) NOT NULL,
+  `password` VARCHAR(100) NOT NULL,
   `nick_name` VARCHAR(100) NOT NULL,
   `gender` int not NULL default 0,
   `birthday` DATETIME NULL,
