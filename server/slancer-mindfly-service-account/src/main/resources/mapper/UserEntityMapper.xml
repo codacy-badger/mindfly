@@ -3,6 +3,7 @@
 <mapper namespace="slancer.mindfly.service.account.dao.UserDAO">
     <resultMap id="UserEntityMap" type="UserEntity">
         <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
         <result column="nick_name" jdbcType="VARCHAR" property="nickName"/>
         <result column="gender" jdbcType="TINYINT" property="gender"/>
         <result column="birthday" jdbcType="TIMESTAMP" property="birthday"/>
@@ -12,7 +13,7 @@
     </resultMap>
 
     <sql id="all_fields">
-        id, nick_name, gender, birthday,
+        id, password, nick_name, gender, birthday,
         create_time, update_time, delete_flag
     </sql>
 
@@ -20,7 +21,7 @@
         insert into user_info (
         <include refid="all_fields"/>
         ) values (
-        #{id}, #{nickName}, #{gender}, #{birthday},
+        #{id}, #{password}, #{nickName}, #{gender}, #{birthday},
         #{createTime}, #{updateTime}, #{deleteFlag}
         )
     </insert>
